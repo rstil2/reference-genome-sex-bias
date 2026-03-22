@@ -1,0 +1,12 @@
+# Raw VCF data (publicly available from 1000 Genomes)
+Data/GRCh38/
+Data/T2T_CHM13/
+
+# Derived feature matrices (reproducible from code + raw data)
+Results/features/
+
+# Pipeline execution logs
+Results/logs/
+
+# macOS
+.DS_Store

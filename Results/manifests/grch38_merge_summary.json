@@ -1,0 +1,101 @@
+{
+  "generated_utc": "2026-03-15T22:39:11Z",
+  "n_input_files": 23,
+  "n_samples": 3202,
+  "n_total_variant_features": 11500,
+  "per_chromosome_feature_counts": [
+    {
+      "file": "grch38_chr1_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr2_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr3_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr4_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr5_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr6_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr7_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr8_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr9_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr10_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr11_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr12_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr13_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr14_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr15_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr16_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr17_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr18_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr19_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr20_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr21_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chr22_features.csv",
+      "n_features": 500
+    },
+    {
+      "file": "grch38_chrX_features.csv",
+      "n_features": 500
+    }
+  ],
+  "out_features_csv": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/features/grch38_genome_features_raw.csv"
+}

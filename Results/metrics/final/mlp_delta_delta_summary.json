@@ -1,0 +1,17 @@
+{
+  "generated_utc": "2026-03-15T23:22:27Z",
+  "n_repeats": 20,
+  "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+  "delta_delta_mean": -0.002449055894698543,
+  "delta_delta_bootstrap_ci_95": [
+    -0.010016996455028779,
+    0.00496353715503886
+  ],
+  "paired_sign_permutation_p_value": 0.5598880223955209,
+  "direction_supports_hypothesis": false,
+  "observed_statistic": -0.002449055894698543,
+  "inputs": {
+    "grch38_metrics": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/metrics/genome_wide/grch38_mlp_metrics.csv",
+    "t2t_metrics": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/metrics/genome_wide/t2t_mlp_metrics.csv"
+  }
+}

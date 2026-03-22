@@ -1,0 +1,48 @@
+{
+  "study_name": "Project33_reference_genome_sex_effects",
+  "created_utc": "2026-02-22T00:00:00Z",
+  "data": {
+    "metadata_file": "Study_v2_Real_Data/Data/Metadata/igsr.samples.tsv",
+    "grch38_dir": "Study_v2_Real_Data/Data/GRCh38",
+    "t2t_dir": "Study_v2_Real_Data/Data/T2T_CHM13"
+  },
+  "split": {
+    "strategy": "stratified_by_superpopulation_and_sex",
+    "train_frac": 0.7,
+    "val_frac": 0.15,
+    "test_frac": 0.15,
+    "random_seed": 20260222,
+    "repeats": 20,
+    "fixed_split_ids_file": "Study_v2_Real_Data/Results/splits/split_manifest_v1.csv"
+  },
+  "preprocessing": {
+    "maf_threshold": 0.01,
+    "call_rate_threshold": 0.95,
+    "fit_train_only": true,
+    "feature_selection": "equivalent_logic_per_reference"
+  },
+  "models": [
+    "logistic_regression",
+    "random_forest",
+    "xgboost",
+    "svm",
+    "mlp"
+  ],
+  "metrics": {
+    "primary": "balanced_accuracy",
+    "secondary": [
+      "macro_f1",
+      "macro_ovr_auc"
+    ]
+  },
+  "inference": {
+    "bootstrap_iterations": 5000,
+    "permutation_iterations": 2000,
+    "multiple_testing_correction": "holm"
+  },
+  "outputs": {
+    "metrics_dir": "Study_v2_Real_Data/Results/metrics",
+    "predictions_dir": "Study_v2_Real_Data/Results/predictions",
+    "logs_dir": "Study_v2_Real_Data/Results/logs"
+  }
+}

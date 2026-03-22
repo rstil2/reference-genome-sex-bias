@@ -1,0 +1,17 @@
+{
+  "generated_utc": "2026-03-15T23:48:02Z",
+  "n_repeats": 20,
+  "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+  "delta_delta_mean": -0.0007351074797330881,
+  "delta_delta_bootstrap_ci_95": [
+    -0.005634982810361167,
+    0.004067115068953031
+  ],
+  "paired_sign_permutation_p_value": 0.7818436312737452,
+  "direction_supports_hypothesis": false,
+  "observed_statistic": -0.0007351074797330881,
+  "inputs": {
+    "grch38_metrics": "Study_v2_Real_Data/Results/metrics/genome_wide/grch38_logistic_regression_metrics.csv",
+    "t2t_metrics": "Study_v2_Real_Data/Results/metrics/genome_wide/t2t_logistic_regression_metrics.csv"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "generated_utc": "2026-03-15T22:30:25Z",
+  "n_common_patients": 3202,
+  "n_grch38_variant_features": 2000,
+  "n_t2t_variant_features": 2000,
+  "note": "Features are reference-specific and not cross-aligned by position. Patient roster is aligned.",
+  "grch38_input": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/manifests/grch38_chr1_features_raw.csv",
+  "t2t_input": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/manifests/t2t_chr1_features_raw.csv",
+  "grch38_aligned_output": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/manifests/grch38_chr1_features_aligned.csv",
+  "t2t_aligned_output": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/manifests/t2t_chr1_features_aligned.csv"
+}

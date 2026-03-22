@@ -1,0 +1,3 @@
+model,true_ba,mean_permuted_ba,chance_level,collapsed_to_chance
+logistic_regression,0.9799747576022082,0.20350234206463416,0.2,True
+random_forest,0.9361461699969332,0.20948046932881376,0.2,True

@@ -1,0 +1,10 @@
+{
+  "generated_utc": "20260315T224854Z",
+  "variants_per_chr": 500,
+  "maf_threshold": 0.01,
+  "call_rate_threshold": 0.95,
+  "repeats": 20,
+  "seed": 20260222,
+  "models": "logistic_regression,random_forest,xgboost,svm,mlp",
+  "chromosomes": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X"
+}

@@ -1,0 +1,12 @@
+{
+  "generated_utc": "2026-03-15T23:22:26Z",
+  "model": "mlp",
+  "n_repeats": 20,
+  "n_samples": 3202,
+  "n_features": 11500,
+  "overall_balanced_accuracy_mean": 0.9721003133982997,
+  "overall_balanced_accuracy_std": 0.008312486836629156,
+  "male_balanced_accuracy_mean": 0.9740413470352678,
+  "female_balanced_accuracy_mean": 0.970207157221678,
+  "sex_gap_male_minus_female": 0.003834189813589739
+}

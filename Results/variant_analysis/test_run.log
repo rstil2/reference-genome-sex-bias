@@ -1,0 +1,64 @@
+20:12:42 [INFO] === Variant-Level Bias Analysis ===
+20:12:42 [INFO] Output directory: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis
+20:12:42 [INFO] *** TEST MODE: results cover 2 Mb window only ***
+20:12:42 [INFO] Loading metadata from /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/manifests/clean_metadata_v1.csv
+20:12:42 [INFO] 
+--- chrX whole-chromosome stats ---
+20:12:42 [INFO] TEST MODE: restricting to chrX:2700000-4700000
+20:12:42 [INFO]   bcftools stats -r chrX:2700000-4700000 CCDG_14151_B01_GRM_WGS_2020-08-05_chrX.filtered.eagle2-phased.v2.vcf.gz
+20:12:46 [INFO]     → 3202 samples parsed
+20:12:46 [INFO] TEST MODE: restricting to chrX:2800000-4800000
+20:12:46 [INFO]   bcftools stats -r chrX:2800000-4800000 1KGP.CHM13v2.0.chrX.recalibrated.snp_indel.pass.vcf.gz
+20:13:11 [INFO]     → 3202 samples parsed
+20:13:11 [INFO] chrX: 6404 sample-reference records after metadata merge
+20:13:11 [INFO] Saved: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/per_sample_chrX.csv
+20:13:11 [INFO] 
+--- chr22 autosomal control ---
+20:13:11 [INFO] TEST MODE: restricting to chr22:20000000-22000000
+20:13:11 [INFO]   bcftools stats -r chr22:20000000-22000000 CCDG_14151_B01_GRM_WGS_2020-08-05_chr22.filtered.shapeit2-duohmm-phased.vcf.gz
+20:13:15 [INFO]     → 3202 samples parsed
+20:13:15 [INFO] TEST MODE: restricting to chr22:20000000-22000000
+20:13:15 [INFO]   bcftools stats -r chr22:20000000-22000000 1KGP.CHM13v2.0.chr22.recalibrated.snp_indel.pass.vcf.gz
+20:13:47 [INFO]     → 3202 samples parsed
+20:13:47 [INFO] Saved: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/per_sample_chr22.csv
+20:13:47 [INFO] 
+--- Computing normalised het rate (chrX / chr22) ---
+20:13:48 [INFO] Saved: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/per_sample_normalised.csv
+20:13:48 [INFO] 
+--- Group comparisons ---
+/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/.venv/lib/python3.13/site-packages/scipy/stats/_wilcoxon.py:181: RuntimeWarning: invalid value encountered in scalar divide
+  z = (r_plus - mn) / se
+20:13:48 [INFO] Saved: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/group_comparisons.csv
+20:13:48 [INFO] 
+--- Superpopulation-stratified summary ---
+20:13:48 [INFO] Saved: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/superpop_summary.csv
+20:13:48 [INFO] 
+--- Generating figures ---
+20:13:49 [INFO] Saved figure: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/fig_chrX_het_rate.png
+20:13:50 [INFO] Saved figure: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/fig_chrX_call_rate.png
+20:13:50 [INFO] Saved figure: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/fig_chrX_hom_rate.png
+20:13:50 [INFO] Saved figure: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/fig_chrX_het_by_superpop.png
+20:13:50 [INFO] Saved figure: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/fig_chrX_vs_chr22_het.png
+20:13:50 [INFO] Saved figure: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/fig_norm_het_rate.png
+20:13:50 [INFO] 
+--- Writing JSON summary ---
+20:13:50 [INFO] Saved: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/summary.json
+
+======================================================================
+VARIANT-LEVEL BIAS ANALYSIS — RESULTS
+======================================================================
+
+[GRCh38] chrX het rate:
+  Females : mean=0.6395  sd=0.1044  n=1603
+  Males   : mean=0.0033  sd=0.0185  n=1599
+
+[T2T] chrX het rate:
+  Females : mean=0.6431  sd=0.1102  n=1603
+  Males   : mean=0.0000  sd=0.0000  n=1599
+
+[Δ het rate (T2T − GRCh38)]
+  Females : Δ=+0.00363  95%CI=[-0.00040, +0.00770]  Wilcoxon p=0.4514  n=1603
+  Males   : Δ=-0.00329  95%CI=[-0.00424, -0.00280]  Wilcoxon p=1.071e-262  n=1599
+
+All outputs in: /Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis
+======================================================================

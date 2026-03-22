@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-03-15T22:37:20Z",
+  "reference_label": "GRCh38",
+  "vcf": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Data/GRCh38/CCDG_14151_B01_GRM_WGS_2020-08-05_chr22.filtered.shapeit2-duohmm-phased.vcf.gz",
+  "metadata": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/manifests/clean_metadata_v1.csv",
+  "n_samples_in_vcf": 3202,
+  "n_samples_after_metadata_merge": 3202,
+  "n_variant_features": 500,
+  "max_variants_requested": 500,
+  "maf_threshold": 0.01,
+  "call_rate_threshold": 0.95,
+  "out_features_csv": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/features/grch38_chr22_features.csv"
+}

@@ -1,0 +1,11 @@
+{
+  "generated_utc": "2026-03-22T14:29:58Z",
+  "reference": "t2t",
+  "models": [
+    "logistic_regression",
+    "random_forest"
+  ],
+  "label_permutation_all_collapsed": true,
+  "n_lopo_tests": 30,
+  "n_balance_tests": 6
+}

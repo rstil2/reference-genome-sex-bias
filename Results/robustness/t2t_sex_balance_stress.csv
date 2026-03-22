@@ -1,0 +1,7 @@
+model,sex,balanced_accuracy,train_n
+logistic_regression,M,0.9861224489795919,2150
+logistic_regression,F,0.9853658536585366,2150
+logistic_regression,overall,0.9851258581235698,2150
+random_forest,M,0.9233868866695614,2150
+random_forest,F,0.9427952353942144,2150
+random_forest,overall,0.9336266484229399,2150

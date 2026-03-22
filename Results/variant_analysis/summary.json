@@ -1,0 +1,181 @@
+{
+  "run_timestamp": "2026-03-16T00:56:27Z",
+  "test_mode": false,
+  "n_samples": 3202,
+  "n_female": 1603,
+  "n_male": 1599,
+  "chrX_n_records": 6404,
+  "key_statistics": {
+    "GRCh38": {
+      "het_rate": {
+        "female_chrX": {
+          "n": 1603,
+          "mean": 0.6051930667188389,
+          "sd": 0.06162453071306944,
+          "median": 0.604484485154981,
+          "ci95": [
+            0.6021499456602517,
+            0.6081907396356675
+          ]
+        },
+        "male_chrX": {
+          "n": 1599,
+          "mean": 0.002026192275491747,
+          "sd": 0.013042227027458098,
+          "median": 0.001637092229071646,
+          "ci95": [
+            0.0016901312598267986,
+            0.002688899545367323
+          ]
+        }
+      },
+      "call_rate": {
+        "female_chrX": {
+          "n": 1603,
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        },
+        "male_chrX": {
+          "n": 1599,
+          "mean": 1.0,
+          "sd": 0.0,
+          "median": 1.0,
+          "ci95": [
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "hom_rate": {
+        "female_chrX": {
+          "n": 1603,
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "male_chrX": {
+          "n": 1599,
+          "mean": 0.9578007456136038,
+          "sd": 0.024278145077652653,
+          "median": 0.958405837366751,
+          "ci95": [
+            0.9564611047113069,
+            0.9585457944818971
+          ]
+        }
+      }
+    },
+    "T2T": {
+      "het_rate": {
+        "female_chrX": {
+          "n": 1603,
+          "mean": 0.6442884069928387,
+          "sd": 0.05501421043386925,
+          "median": 0.6561708375202325,
+          "ci95": [
+            0.6414226894630083,
+            0.6469416996119127
+          ]
+        },
+        "male_chrX": {
+          "n": 1599,
+          "mean": 0.0010945115845210883,
+          "sd": 0.0001661919712709267,
+          "median": 0.0010578861961879976,
+          "ci95": [
+            0.0010864302375914394,
+            0.0011031171494502374
+          ]
+        }
+      },
+      "call_rate": {
+        "female_chrX": {
+          "n": 1603,
+          "mean": 0.91722845505375,
+          "sd": 0.012016538577170558,
+          "median": 0.9183763555625831,
+          "ci95": [
+            0.9166522858617521,
+            0.9178091428304875
+          ]
+        },
+        "male_chrX": {
+          "n": 1599,
+          "mean": 0.996466282829355,
+          "sd": 0.0007154827232752954,
+          "median": 0.996634200382562,
+          "ci95": [
+            0.9964317147511178,
+            0.9964995772470974
+          ]
+        }
+      },
+      "hom_rate": {
+        "female_chrX": {
+          "n": 1603,
+          "mean": 0.0,
+          "sd": 0.0,
+          "median": 0.0,
+          "ci95": [
+            0.0,
+            0.0
+          ]
+        },
+        "male_chrX": {
+          "n": 1599,
+          "mean": 0.9568200223515679,
+          "sd": 0.005360867186932532,
+          "median": 0.9574413389002651,
+          "ci95": [
+            0.9565511440657057,
+            0.9570852892266485
+          ]
+        }
+      }
+    },
+    "delta_female_het_rate_T2T_minus_GRCh38": {
+      "mean_delta": 0.03909534027399995,
+      "sd_delta": 0.030804039752663884,
+      "ci95": [
+        0.03754682293709043,
+        0.04053498142512047
+      ],
+      "wilcoxon_p": 5.231645678592061e-200,
+      "n": 1603
+    },
+    "delta_female_call_rate_T2T_minus_GRCh38": {
+      "mean_delta": -0.08277154494625004,
+      "sd_delta": 0.012016538577170558,
+      "ci95": [
+        -0.08334771413824794,
+        -0.08219085716951248
+      ],
+      "wilcoxon_p": 1.6399829622909923e-263,
+      "n": 1603
+    },
+    "delta_male_het_rate_T2T_minus_GRCh38": {
+      "mean_delta": -0.0009316806909706583,
+      "sd_delta": 0.013044958778911648,
+      "ci95": [
+        -0.0015876940901420457,
+        -0.0006015406318086268
+      ],
+      "wilcoxon_p": 7.359064056571053e-263,
+      "n": 1599
+    }
+  },
+  "outputs": {
+    "per_sample_chrX": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/per_sample_chrX.csv",
+    "group_comparisons": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/group_comparisons.csv",
+    "superpop_summary": "/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/Study_v2_Real_Data/Results/variant_analysis/superpop_summary.csv"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "generated_utc": "2026-03-15T22:30:32Z",
+  "model": "logistic_regression",
+  "n_repeats": 10,
+  "n_samples": 3202,
+  "n_features": 2000,
+  "overall_balanced_accuracy_mean": 0.9463846788929857,
+  "overall_balanced_accuracy_std": 0.008709345903968286,
+  "male_balanced_accuracy_mean": 0.9508946784387513,
+  "female_balanced_accuracy_mean": 0.9431768370030422,
+  "sex_gap_male_minus_female": 0.007717841435709083
+}

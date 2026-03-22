@@ -1,0 +1,23 @@
+
+=== CHECK 1: Label Permutation Sanity ===
+  logistic_regression: true=0.9825, permuted=0.1903, chance=0.20, collapsed=✓
+  random_forest: true=0.9408, permuted=0.2091, chance=0.20, collapsed=✓
+
+=== CHECK 2: Leave-One-Superpopulation-Out ===
+  logistic_regression (drop AFR): BA=0.7772
+  logistic_regression (drop AMR): BA=0.7957
+  logistic_regression (drop EAS): BA=0.7851
+  logistic_regression (drop EUR): BA=0.8000
+  logistic_regression (drop SAS): BA=0.7842
+  random_forest (drop AFR): BA=0.7408
+  random_forest (drop AMR): BA=0.7873
+  random_forest (drop EAS): BA=0.7526
+  random_forest (drop EUR): BA=0.7851
+  random_forest (drop SAS): BA=0.7637
+
+=== CHECK 3: Sex-Balance Stress Test ===
+  Downsampled training: 2150 samples (M=1075, F=1075)
+  logistic_regression (balanced): BA=0.9851
+  random_forest (balanced): BA=0.9336
+
+Robustness results saved to: Study_v2_Real_Data/Results/robustness
