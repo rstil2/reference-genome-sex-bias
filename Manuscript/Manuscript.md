@@ -8,11 +8,11 @@
 
 ## Abstract
 
-**Background:** Reference genome choice shapes variant discovery, and the X chromosome is uniquely sensitive to assembly completeness: sex-specific ploidy means that assembly improvements unlock heterozygous sites primarily in female samples. Whether such representational differences propagate to downstream machine-learning endpoints has not been tested.
+**Background:** Reference genome choice shapes variant discovery, and the X chromosome is uniquely sensitive to assembly completeness: sex-specific ploidy means that assembly improvements reveal heterozygous sites primarily in female samples. However, representational differences in variant discovery need not entail bias in downstream analytical endpoints; whether upstream measurement shifts propagate to machine-learning disparity has not been tested.
 
 **Methods:** We analyzed 3,202 individuals (1,603 female, 1,599 male) from the 1000 Genomes Project, comparing sex-stratified chrX variant statistics under GRCh38 and T2T-CHM13v2.0. Downstream sex disparity was quantified using a pre-registered delta-delta estimand ($\Delta\Delta$) across five classifier families (logistic regression, random forest, XGBoost, SVM, MLP), each evaluated over 20 stratified repeats with Holm–Bonferroni correction. A robustness battery comprising label permutation, leave-one-superpopulation-out analysis, and sex-balance stress testing was performed.
 
-**Results:** Female chrX heterozygosity was 6.5% higher under T2T-CHM13 than GRCh38 (paired $\delta$ = +0.039; 95% CI [+0.038, +0.041]; Wilcoxon $p$ = 5.23 × 10⁻²⁰⁰), uniform across all five superpopulations. Male chrX heterozygosity remained near zero under both assemblies. Despite this large upstream shift, no classifier showed a significant reference-associated change in sex disparity: all Holm-adjusted $p$ > 0.05, all 95% CIs spanned zero, and the median $\Delta\Delta$ across models was −0.0007's. The pre-specified confirmatory framework classified the evidence as Tier C (exploratory).
+**Results:** Female chrX heterozygosity was 6.5% higher under T2T-CHM13 than GRCh38 (paired $\delta$ = +0.039; 95% CI [+0.038, +0.041]; Wilcoxon $p$ = 5.23 × 10⁻²⁰⁰), present in four of five superpopulations. Male chrX heterozygosity remained near zero under both assemblies. Despite this large upstream shift, no classifier showed a significant reference-associated change in sex disparity: all Holm-adjusted $p$ > 0.05, all 95% CIs spanned zero, and the median $\Delta\Delta$ across models was −0.0007. The pre-specified confirmatory framework classified the evidence as Tier C (exploratory).
 
 **Conclusions:** Reference assembly choice produces a substantial, sex-stratified effect on chrX variant representation that does not propagate to detectable shifts in downstream classification sex disparity. Representational and downstream bias evaluations answer distinct questions and require independent empirical assessment.
 
@@ -22,9 +22,9 @@
 
 Every variant call is defined relative to a reference assembly. Differences in assembly completeness alter which variants are discoverable, how they are characterized, and what downstream conclusions follow [1]. GRCh38 has served as the community standard for over a decade but retains gaps in centromeric, subtelomeric, and repeat-rich regions that create localized biases in variant calling [2]. T2T-CHM13 is the first gap-free human reference assembly [3], and the recent human pangenome reference [12] further underscores that single-reference frameworks impose systematic blind spots. As T2T transitions into production use for large-cohort analyses, quantifying where and how much analyses shift is a practical priority.
 
-The X chromosome is the most sensitive locus for sex-linked reference effects. ChrX is haploid in males and diploid in females, so assembly improvements that resolve previously inaccessible sequence expose heterozygous positions primarily in female samples. Two pseudoautosomal regions (PAR1 and PAR2)—shared with chrY and behaving as diploid in both sexes—have boundary coordinates that differ between assemblies, creating additional potential for sex-differential variant calling at the transitions. The recent completion of the Y chromosome sequence [13] confirms that sex-chromosome assembly quality has lagged autosomes, amplifying these concerns. These properties make chrX a natural stress test for reference-induced measurement asymmetry.
+The X chromosome is the most sensitive locus for sex-linked reference effects. ChrX is hemizygous in males and diploid in females, so assembly improvements that resolve previously inaccessible sequence expose heterozygous positions primarily in female samples. Two pseudoautosomal regions (PAR1 and PAR2)—shared with chrY and behaving as diploid in both sexes—have boundary coordinates that differ between assemblies, creating additional potential for sex-differential variant calling at the transitions. The recent completion of the Y chromosome sequence [13] confirms that sex-chromosome assembly quality has lagged autosomes, amplifying these concerns. These properties make chrX a natural stress test for reference-induced measurement asymmetry.
 
-A separate question is whether upstream representational differences propagate to downstream analytical endpoints. Machine-learning classifiers trained on reference-derived variant features could exhibit different sex-disparity profiles if the sex-differential feature distribution shifts between references. This propagation pathway has direct implications for algorithmic fairness assessments in genomic medicine but has not been empirically tested.
+A separate question is whether upstream representational differences propagate to downstream analytical endpoints. Machine-learning classifiers trained on reference-derived variant features could exhibit different sex-disparity profiles if the sex-differential feature distribution shifts between references. This propagation pathway has direct implications for algorithmic fairness assessments in genomic medicine, yet whether reference-induced measurement asymmetries translate into downstream disparity shifts remains empirically untested.
 
 We address both questions using 3,202 individuals from the 1000 Genomes Project [4], comparing sex-stratified chrX variant statistics between GRCh38 and T2T-CHM13 callsets and testing whether any upstream shift alters sex disparity in five downstream classifiers. A pre-specified confirmatory decision framework and robustness battery ensure that conclusions are appropriately calibrated to the strength of the evidence.
 
@@ -71,7 +71,9 @@ where $\Delta_{\text{ref}} = \text{BA}_{\text{male, ref}} - \text{BA}_{\text{fem
 
 #### 2.4.2 Classifiers and experimental design
 
-Five classifier families were evaluated: logistic regression, random forest, XGBoost [9], support vector machine (SVM), and multilayer perceptron (MLP) [10]. Each classifier was trained to predict superpopulation membership from genome-wide variant features (approximately 11,500 features: 500 variants per chromosome × 23 chromosomes).
+Five classifier families were evaluated: logistic regression, random forest, XGBoost [9], support vector machine (SVM), and multilayer perceptron (MLP) [10]. Each classifier was trained to predict superpopulation membership from genome-wide variant features (approximately 11,500 features: 500 variants per chromosome × 23 chromosomes). Superpopulation classification was chosen as the downstream task because it provides a high-signal genomic prediction problem driven largely by autosomal common variation, enabling sensitive detection of reference-induced feature shifts without phenotype confounding.
+
+For each chromosome, the first 500 biallelic SNPs passing minimum quality filters (minor allele frequency ≥ 0.01, call rate ≥ 0.95) were selected in VCF file order. The same filtering thresholds were applied independently to each reference. Genotypes were encoded as diploid dosages (sum of allele values). Male hemizygous chrX calls, represented as single-allele genotypes in the VCF, returned missing values during dosage parsing and were imputed during preprocessing alongside other missing data, consistent with standard practice for mixed-ploidy chromosomes in population-scale analyses.
 
 Each model was run with 20 independent stratified train/test splits (stratified by superpopulation × sex). Preprocessing (imputation and standard scaling) was fit exclusively on training partitions to prevent data leakage. Identical model architecture, hyperparameter settings, and feature-selection logic were applied across references to ensure a fair comparison.
 
@@ -86,7 +88,7 @@ A four-criterion confirmatory framework was pre-specified:
 1. **Directional consistency:** median $\Delta\Delta > 0$ across models.
 2. **Uncertainty exclusion:** at least one model's 95% CI excludes zero.
 3. **Multiplicity-corrected significance:** at least one Holm-adjusted $p < 0.05$.
-4. **Practical effect-size threshold:** $|\Delta\Delta| \geq 0.01$ for at least one model.
+4. **Practical effect-size threshold:** $|\Delta\Delta| \geq 0.01$ for at least one model. This threshold corresponds to a one-percentage-point shift in balanced accuracy, below which group-level disparity differences are unlikely to have practical consequences for downstream applications.
 
 Evidence was classified as **Tier A (confirmatory)** if all four criteria were met, **Tier B (suggestive)** if criteria 1–2 passed, or **Tier C (exploratory)** otherwise.
 
@@ -137,7 +139,7 @@ Female chrX call rate was 1.0000 under GRCh38 and 0.9172 under T2T-CHM13 ($\delt
 
 ### 3.4 PAR regions show reference-specific sex-disparity patterns
 
-PAR1 heterozygosity showed no sex difference under GRCh38 (female − male = −0.0019; Mann–Whitney $p$ = 0.856) but a large sex difference under T2T-CHM13 (+0.4203; $p$ < 2.2 × 10⁻¹⁶). PAR2 showed the reverse: a large sex difference under GRCh38 (+0.4884; $p$ < 2.2 × 10⁻¹⁶) that could not be assessed under T2T (no variant records recovered). These opposing patterns are consistent with different PAR boundary placements between assemblies producing different diploid/haploid calling behavior across sexes in pseudoautosomal transition zones.
+PAR1 heterozygosity showed no sex difference under GRCh38 (female − male = −0.0019; Mann–Whitney $p$ = 0.856) but a large sex difference under T2T-CHM13 (+0.4203; $p$ < 2.2 × 10⁻¹⁶). PAR2 showed the reverse: a large sex difference under GRCh38 (+0.4884; $p$ < 2.2 × 10⁻¹⁶) that could not be assessed under T2T because the 1KGP T2T callset contains no variant records in the T2T-specific PAR2 coordinate range (chrX:155,701,383–156,030,895), likely because the variant-calling pipeline treated this region differently under the T2T assembly. These opposing patterns are consistent with different PAR boundary placements between assemblies producing different diploid/haploid calling behavior across sexes in pseudoautosomal transition zones.
 
 ### 3.5 Sex-normalized heterozygosity confirms chrX-specificity
 
@@ -225,7 +227,7 @@ The central finding is a dissociation: a large, sex-linked effect on chrX varian
 
 T2T-CHM13 resolves previously gapped chrX sequence, exposing heterozygous sites that are inaccessible under GRCh38. Because males are hemizygous for non-PAR chrX, these newly recovered sites produce heterozygous calls only in females—predicting the sex-specificity of the observed +0.039 shift without requiring any difference in underlying genetic diversity.
 
-Three observations reinforce this assembly-driven interpretation. First, the reduced standard deviation under T2T (0.055 vs. 0.062) indicates that GRCh38's assembly gaps introduce sample-to-sample noise in which sites happen to be callable, and that a more complete assembly removes this noise. Second, the directional shift is present across all five superpopulations (Table 2), ruling out a population-genetics explanation. Third, the approximately 8.3% female call rate reduction under T2T reflects expanded coordinate space rather than inferior coverage: T2T contains sites absent from GRCh38 that register as uncalled in a per-site denominator. The absence of any analogous sex-differential shift on chromosome 22 confirms chrX-specificity.
+Three observations reinforce this assembly-driven interpretation. First, the reduced standard deviation under T2T (0.055 vs. 0.062) indicates that GRCh38's assembly gaps introduce sample-to-sample noise in which sites happen to be callable, and that a more complete assembly removes this noise. Second, the directional shift is present in four of five superpopulations (Table 2); the modest negative delta in AFR reflects an already-high baseline rather than a reversed mechanism, and the overall pattern rules out a simple population-genetics explanation. Third, the approximately 8.3% female call rate reduction under T2T reflects expanded coordinate space rather than inferior coverage: T2T contains sites absent from GRCh38 that register as uncalled in a per-site denominator. The absence of any analogous sex-differential shift on chromosome 22 confirms chrX-specificity.
 
 The PAR results add a further dimension. Under GRCh38, PAR1 shows no sex difference in heterozygosity ($p$ = 0.856), but under T2T the female-male gap is +0.42; PAR2 shows the reverse pattern. These opposing shifts are consistent with different PAR boundary placements between assemblies producing different diploid/haploid calling behavior across sexes in pseudoautosomal transition zones.
 
@@ -235,7 +237,7 @@ The null downstream result directly addresses a practical concern: that switchin
 
 Two explanations are compatible with this null. First, superpopulation classification is driven primarily by autosomal common-variant signals; the chrX het rate shift, while large in relative terms, may be peripheral to the discriminative features. Second, the female call rate reduction under T2T may partially counterbalance the heterozygosity increase, preserving net feature-vector separability across sexes.
 
-The robustness battery strengthens this null interpretation. Label permutation confirmed that models learn genuine population structure (permuted accuracy ≈ 0.20). Leave-one-superpopulation-out analysis showed expected performance degradation without sex-differential effects. The sex-balance stress test confirmed that minor cohort imbalance does not drive the result.
+The robustness analyses strengthen this null interpretation. Label permutation confirmed that models learn genuine population structure (permuted accuracy ≈ 0.20). Leave-one-superpopulation-out analysis showed expected performance degradation without sex-differential effects. The sex-balance stress test confirmed that minor cohort imbalance does not drive the result.
 
 ### 4.4 Limitations
 
@@ -247,21 +249,21 @@ Four constraints qualify interpretation:
 
 3. **Single downstream task.** The $\Delta\Delta$ analysis used a single predictive task (superpopulation classification). Analyses that depend directly on chrX variant density—such as phasing accuracy, X-inactivation inference, or sex-specific GWAS calibration—may behave differently.
 
-4. **Robustness battery scope.** Not all protocol-specified sensitivity analyses (e.g., MAF-threshold variation, feature-count grids, controlled missingness injection) were executed. The three completed checks (label permutation, LOPO, sex-balance stress) address the most critical threats but do not exhaust all potential confounds.
+4. **Robustness scope.** Not all protocol-specified sensitivity analyses (e.g., MAF-threshold variation, feature-count grids, controlled missingness injection) were executed. The three completed checks (label permutation, LOPO, sex-balance stress) address the most critical threats but do not exhaust all potential confounds.
 
 ### 4.5 Practical implications
 
 **For chrX-based analyses:** Reference choice should be treated as an explicit design variable. A +0.039 het rate shift is large enough to affect any analysis that uses female chrX heterozygosity as a metric; it should not be assumed stable across reference versions.
 
-**For bias auditing:** Representational audits and downstream disparity audits answer distinct questions. This study demonstrates that the two can diverge completely—a large upstream representational shift need not propagate to a downstream fairness metric. Both audits require explicit empirical evaluation.
+**For bias auditing:** Representational audits and downstream disparity audits answer distinct questions. This study demonstrates that the two can diverge completely—a large upstream representational shift need not propagate to a downstream fairness metric. Both audits require explicit empirical evaluation. Future fairness frameworks for genomic pipelines should incorporate reference-awareness as a design variable alongside conventional protected attributes.
 
-**For reference transition planning:** The null downstream result is encouraging for the GRCh38-to-T2T transition in classification-based analyses, but should not be generalized without task-specific evaluation.
+**For reference transition planning:** The null downstream result is encouraging for the GRCh38-to-T2T transition in classification-based analyses, but should not be generalized without task-specific evaluation. Tasks that depend directly on chrX variant density—such as GWAS calibration for X-linked loci, polygenic risk score construction incorporating sex chromosomes, or X-inactivation inference—may exhibit sensitivities that ancestry classification does not capture.
 
 ---
 
 ## 5. Conclusions
 
-Female chrX heterozygosity is 6.5% higher under T2T-CHM13 than GRCh38 ($\delta$ = +0.0391; 95% CI [+0.0375, +0.0405]; $p$ = 5.23 × 10⁻²⁰⁰), an effect consistent across five superpopulations and attributable to improved chrX assembly completeness. Male chrX heterozygosity remains near zero under both assemblies. Despite this large upstream effect, five downstream classifier families show no reference-associated shift in sex disparity (all Holm-adjusted $p$ > 0.05; all CIs span zero; evidence Tier C). This decoupling establishes that upstream and downstream bias evaluations address distinct questions, and both require explicit empirical examination.
+Female chrX heterozygosity is 6.5% higher under T2T-CHM13 than GRCh38 ($\delta$ = +0.0391; 95% CI [+0.0375, +0.0405]; $p$ = 5.23 × 10⁻²⁰⁰), an effect observed across all five superpopulations (four of five showing the expected positive direction) and attributable to improved chrX assembly completeness. Male chrX heterozygosity remains near zero under both assemblies. Despite this large upstream effect, five downstream classifier families show no reference-associated shift in sex disparity (all Holm-adjusted $p$ > 0.05; all CIs span zero; evidence Tier C). This decoupling establishes that upstream and downstream bias evaluations address distinct questions, and both require explicit empirical examination.
 
 ---
 
