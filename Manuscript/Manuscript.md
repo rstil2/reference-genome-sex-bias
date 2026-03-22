@@ -267,7 +267,7 @@ Female chrX heterozygosity is 6.5% higher under T2T-CHM13 than GRCh38 ($\delta$ 
 
 ## Data Availability
 
-Analysis code is available in `Study_v2_Real_Data/Code/`. Primary variant-level results are in `Study_v2_Real_Data/Results/variant_analysis/`. Delta-delta summaries with Holm–Bonferroni correction for all five classifiers are in `Study_v2_Real_Data/Results/metrics/final/all_models_holm_corrected.json`. Robustness battery outputs are in `Study_v2_Real_Data/Results/robustness/`. Publication-quality figures are in `Study_v2_Real_Data/Figures/`. A complete environment snapshot is archived in `Study_v2_Real_Data/Results/environment/`.
+All analysis code, results, and publication figures are available at https://github.com/rstil2/reference-genome-sex-bias. Primary variant-level results are in `Results/variant_analysis/`. Delta-delta summaries with Holm–Bonferroni correction for all five classifiers are in `Results/metrics/final/all_models_holm_corrected.json`. Robustness battery outputs are in `Results/robustness/`. Publication-quality figures are in `Figures/`. A complete environment snapshot is archived in `Results/environment/`. Raw VCF data are publicly available from the 1000 Genomes Project (GRCh38: NYGC high-coverage callset; T2T-CHM13v2.0: 1000 Genomes on T2T callset).
 
 ---
 
