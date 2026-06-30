@@ -1,0 +1,14 @@
+{
+  "generated_utc": "2026-06-30T17:02:29Z",
+  "model": "mlp",
+  "label_column": "superpopulation",
+  "stratify_column": "sex",
+  "n_repeats": 20,
+  "n_samples": 3202,
+  "n_features": 6,
+  "overall_balanced_accuracy_mean": 0.5946764067536943,
+  "overall_balanced_accuracy_std": 0.026588441898031057,
+  "male_balanced_accuracy_mean": 0.5502632797799971,
+  "female_balanced_accuracy_mean": 0.635480977672356,
+  "sex_gap_male_minus_female": -0.08521769789235889
+}

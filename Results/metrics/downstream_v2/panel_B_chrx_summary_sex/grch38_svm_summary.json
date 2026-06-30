@@ -1,0 +1,14 @@
+{
+  "generated_utc": "2026-06-30T17:03:29Z",
+  "model": "svm",
+  "label_column": "sex",
+  "stratify_column": "sex",
+  "n_repeats": 20,
+  "n_samples": 3202,
+  "n_features": 6,
+  "overall_balanced_accuracy_mean": 0.9997967479674796,
+  "overall_balanced_accuracy_std": 0.0006255965561494621,
+  "male_balanced_accuracy_mean": 0.9995934959349594,
+  "female_balanced_accuracy_mean": 1.0,
+  "sex_gap_male_minus_female": -0.00040650406504061376
+}

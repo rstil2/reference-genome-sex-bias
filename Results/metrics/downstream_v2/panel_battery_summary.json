@@ -1,0 +1,457 @@
+{
+  "generated_utc": "2026-06-30T18:29:21Z",
+  "panels_run": [
+    "panel_A_chrx_summary_superpop",
+    "panel_B_chrx_summary_sex",
+    "panel_C_genome_wide_snp",
+    "panel_D_autosome_only"
+  ],
+  "site_overlap": {
+    "generated_utc": "2026-06-30T17:00:53Z",
+    "grch38_features": "Study_v2_Real_Data/Results/features/grch38_chrX_features.csv",
+    "t2t_features": "Study_v2_Real_Data/Results/features/t2t_chrX_features.csv",
+    "n_grch38_sites": 500,
+    "n_t2t_sites": 500,
+    "n_shared_positions": 0,
+    "n_grch38_only": 500,
+    "n_t2t_only": 500,
+    "fraction_shared": 0.0,
+    "concordance_computed": false,
+    "mean_genotype_concordance": null
+  },
+  "panel_results": {
+    "panel_A_chrx_summary_superpop": {
+      "generated_utc": "2026-06-30T17:02:44Z",
+      "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+      "n_models": 5,
+      "model_results": {
+        "logistic_regression": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.02205354696890751,
+          "delta_delta_bootstrap_ci_95": [
+            0.008302921817771022,
+            0.036972285917893734
+          ],
+          "paired_sign_permutation_p_value": 0.007598480303939212,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.02205354696890751,
+          "effect_size_threshold_met": true,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/grch38_logistic_regression_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/t2t_logistic_regression_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.015196960607878424,
+          "holm_significant_at_005": true
+        },
+        "random_forest": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.06558640606646782,
+          "delta_delta_bootstrap_ci_95": [
+            0.048429229191154374,
+            0.0834679391683838
+          ],
+          "paired_sign_permutation_p_value": 0.0003999200159968006,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.06558640606646782,
+          "effect_size_threshold_met": true,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/grch38_random_forest_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/t2t_random_forest_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.0011997600479904018,
+          "holm_significant_at_005": true
+        },
+        "xgboost": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.04173655860091559,
+          "delta_delta_bootstrap_ci_95": [
+            0.022875860523781537,
+            0.0601452009203378
+          ],
+          "paired_sign_permutation_p_value": 0.0001999600079984003,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.04173655860091559,
+          "effect_size_threshold_met": true,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/grch38_xgboost_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/t2t_xgboost_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.0009998000399920016,
+          "holm_significant_at_005": true
+        },
+        "svm": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.1363037741495793,
+          "delta_delta_bootstrap_ci_95": [
+            -0.15231675948396106,
+            -0.1216876570808165
+          ],
+          "paired_sign_permutation_p_value": 0.0001999600079984003,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.1363037741495793,
+          "effect_size_threshold_met": true,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/grch38_svm_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/t2t_svm_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.0009998000399920016,
+          "holm_significant_at_005": true
+        },
+        "mlp": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.03078844609340981,
+          "delta_delta_bootstrap_ci_95": [
+            -0.06714359592791608,
+            0.006669817013108524
+          ],
+          "paired_sign_permutation_p_value": 0.1331733653269346,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.03078844609340981,
+          "effect_size_threshold_met": true,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/grch38_mlp_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_A_chrx_summary_superpop/t2t_mlp_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.1331733653269346,
+          "holm_significant_at_005": false
+        }
+      },
+      "confirmatory_decision": {
+        "criterion_1_directional_consistency": true,
+        "criterion_2_any_ci_excludes_zero": true,
+        "criterion_3_holm_significant": true,
+        "criterion_4_effect_size_threshold": true,
+        "median_delta_delta_across_models": 0.02205354696890751,
+        "evidence_tier": "A_confirmatory"
+      },
+      "panel_id": "panel_A_chrx_summary_superpop",
+      "description": "Superpopulation classification from chrX per-sample summary statistics",
+      "reference_sensitive": true
+    },
+    "panel_B_chrx_summary_sex": {
+      "generated_utc": "2026-06-30T17:03:44Z",
+      "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+      "n_models": 5,
+      "model_results": {
+        "logistic_regression": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.000406504065040636,
+          "delta_delta_bootstrap_ci_95": [
+            -0.00101626016260159,
+            0.0
+          ],
+          "paired_sign_permutation_p_value": 0.4953009398120376,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.000406504065040636,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/grch38_logistic_regression_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/t2t_logistic_regression_metrics.csv"
+          },
+          "holm_adjusted_p_value": 1.0,
+          "holm_significant_at_005": false
+        },
+        "random_forest": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.000406504065040636,
+          "delta_delta_bootstrap_ci_95": [
+            -0.00101626016260159,
+            0.0
+          ],
+          "paired_sign_permutation_p_value": 0.4983003399320136,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.000406504065040636,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/grch38_random_forest_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/t2t_random_forest_metrics.csv"
+          },
+          "holm_adjusted_p_value": 1.0,
+          "holm_significant_at_005": false
+        },
+        "xgboost": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.000406504065040636,
+          "delta_delta_bootstrap_ci_95": [
+            -0.00101626016260159,
+            0.0
+          ],
+          "paired_sign_permutation_p_value": 0.4997000599880024,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.000406504065040636,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/grch38_xgboost_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/t2t_xgboost_metrics.csv"
+          },
+          "holm_adjusted_p_value": 1.0,
+          "holm_significant_at_005": false
+        },
+        "svm": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.000406504065040636,
+          "delta_delta_bootstrap_ci_95": [
+            -0.00101626016260159,
+            0.0
+          ],
+          "paired_sign_permutation_p_value": 0.5048990201959608,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.000406504065040636,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/grch38_svm_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/t2t_svm_metrics.csv"
+          },
+          "holm_adjusted_p_value": 1.0,
+          "holm_significant_at_005": false
+        },
+        "mlp": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.0010187489629998104,
+          "delta_delta_bootstrap_ci_95": [
+            -0.0020383275261323607,
+            -0.000203252032520318
+          ],
+          "paired_sign_permutation_p_value": 0.11457708458308338,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.0010187489629998104,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/grch38_mlp_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_B_chrx_summary_sex/t2t_mlp_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.5728854229154169,
+          "holm_significant_at_005": false
+        }
+      },
+      "confirmatory_decision": {
+        "criterion_1_directional_consistency": false,
+        "criterion_2_any_ci_excludes_zero": true,
+        "criterion_3_holm_significant": false,
+        "criterion_4_effect_size_threshold": false,
+        "median_delta_delta_across_models": -0.000406504065040636,
+        "evidence_tier": "C_exploratory"
+      },
+      "panel_id": "panel_B_chrx_summary_sex",
+      "description": "Sex classification from chrX per-sample summary statistics",
+      "reference_sensitive": true
+    },
+    "panel_C_genome_wide_snp": {
+      "generated_utc": "2026-06-30T17:47:17Z",
+      "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+      "n_models": 5,
+      "model_results": {
+        "logistic_regression": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.0007351074797330881,
+          "delta_delta_bootstrap_ci_95": [
+            -0.005634982810361167,
+            0.004067115068953031
+          ],
+          "paired_sign_permutation_p_value": 0.7818436312737452,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.0007351074797330881,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_logistic_regression_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/t2t_logistic_regression_metrics.csv"
+          },
+          "holm_adjusted_p_value": 1.0,
+          "holm_significant_at_005": false
+        },
+        "random_forest": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.008134167340386406,
+          "delta_delta_bootstrap_ci_95": [
+            -0.000792479044657294,
+            0.017266822688139283
+          ],
+          "paired_sign_permutation_p_value": 0.10397920415916817,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.008134167340386406,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_random_forest_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/t2t_random_forest_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.5198960207958409,
+          "holm_significant_at_005": false
+        },
+        "xgboost": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.0012678746598926206,
+          "delta_delta_bootstrap_ci_95": [
+            -0.009110081359824067,
+            0.007046472772448484
+          ],
+          "paired_sign_permutation_p_value": 0.7668466306738653,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.0012678746598926206,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_xgboost_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/t2t_xgboost_metrics.csv"
+          },
+          "holm_adjusted_p_value": 1.0,
+          "holm_significant_at_005": false
+        },
+        "svm": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.0037637878791982825,
+          "delta_delta_bootstrap_ci_95": [
+            -0.0010846037660943333,
+            0.008639053440727558
+          ],
+          "paired_sign_permutation_p_value": 0.16336732653469307,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.0037637878791982825,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_svm_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/t2t_svm_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.6534693061387723,
+          "holm_significant_at_005": false
+        },
+        "mlp": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.002449055894698543,
+          "delta_delta_bootstrap_ci_95": [
+            -0.009828357066741032,
+            0.005330243719584461
+          ],
+          "paired_sign_permutation_p_value": 0.5470905818836233,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.002449055894698543,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_mlp_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_C_genome_wide_snp/t2t_mlp_metrics.csv"
+          },
+          "holm_adjusted_p_value": 1.0,
+          "holm_significant_at_005": false
+        }
+      },
+      "confirmatory_decision": {
+        "criterion_1_directional_consistency": false,
+        "criterion_2_any_ci_excludes_zero": false,
+        "criterion_3_holm_significant": false,
+        "criterion_4_effect_size_threshold": false,
+        "median_delta_delta_across_models": -0.0007351074797330881,
+        "evidence_tier": "C_exploratory"
+      },
+      "panel_id": "panel_C_genome_wide_snp",
+      "description": "Superpopulation from genome-wide common SNPs (v1 design, negative control)",
+      "reference_sensitive": false
+    },
+    "panel_D_autosome_only": {
+      "generated_utc": "2026-06-30T18:29:21Z",
+      "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+      "n_models": 5,
+      "model_results": {
+        "logistic_regression": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.005470613067519753,
+          "delta_delta_bootstrap_ci_95": [
+            -0.010177323782218044,
+            -0.0004940107295498418
+          ],
+          "paired_sign_permutation_p_value": 0.04559088182363527,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.005470613067519753,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_logistic_regression_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_logistic_regression_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.18236352729454108,
+          "holm_significant_at_005": false
+        },
+        "random_forest": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.012861419998931095,
+          "delta_delta_bootstrap_ci_95": [
+            0.0034593514074633034,
+            0.02248527284772521
+          ],
+          "paired_sign_permutation_p_value": 0.020195960807838434,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.012861419998931095,
+          "effect_size_threshold_met": true,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_random_forest_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_random_forest_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.10097980403919217,
+          "holm_significant_at_005": false
+        },
+        "xgboost": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.00437936191063164,
+          "delta_delta_bootstrap_ci_95": [
+            -0.00289694760033451,
+            0.011939054345857923
+          ],
+          "paired_sign_permutation_p_value": 0.2731453709258148,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.00437936191063164,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_xgboost_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_xgboost_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.8194361127774444,
+          "holm_significant_at_005": false
+        },
+        "svm": {
+          "n_repeats": 20,
+          "delta_delta_mean": -0.0016461282601735073,
+          "delta_delta_bootstrap_ci_95": [
+            -0.0068857142074599965,
+            0.0037891993179866813
+          ],
+          "paired_sign_permutation_p_value": 0.5696860627874425,
+          "direction_supports_hypothesis": false,
+          "observed_statistic": -0.0016461282601735073,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_svm_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_svm_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.8194361127774444,
+          "holm_significant_at_005": false
+        },
+        "mlp": {
+          "n_repeats": 20,
+          "delta_delta_mean": 0.004419557356476767,
+          "delta_delta_bootstrap_ci_95": [
+            -0.003899686733956741,
+            0.012386010646352148
+          ],
+          "paired_sign_permutation_p_value": 0.3173365326934613,
+          "direction_supports_hypothesis": true,
+          "observed_statistic": 0.004419557356476767,
+          "effect_size_threshold_met": false,
+          "inputs": {
+            "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_mlp_metrics.csv",
+            "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_mlp_metrics.csv"
+          },
+          "holm_adjusted_p_value": 0.8194361127774444,
+          "holm_significant_at_005": false
+        }
+      },
+      "confirmatory_decision": {
+        "criterion_1_directional_consistency": true,
+        "criterion_2_any_ci_excludes_zero": true,
+        "criterion_3_holm_significant": false,
+        "criterion_4_effect_size_threshold": true,
+        "median_delta_delta_across_models": 0.00437936191063164,
+        "evidence_tier": "B_suggestive"
+      },
+      "panel_id": "panel_D_autosome_only",
+      "description": "Superpopulation from autosomal common SNPs only (negative control)",
+      "reference_sensitive": false
+    }
+  },
+  "summary_csv": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_battery_summary.csv"
+}

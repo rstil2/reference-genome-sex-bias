@@ -1,0 +1,13 @@
+{
+  "generated_utc": "2026-06-30T17:00:53Z",
+  "grch38_features": "Study_v2_Real_Data/Results/features/grch38_chrX_features.csv",
+  "t2t_features": "Study_v2_Real_Data/Results/features/t2t_chrX_features.csv",
+  "n_grch38_sites": 500,
+  "n_t2t_sites": 500,
+  "n_shared_positions": 0,
+  "n_grch38_only": 500,
+  "n_t2t_only": 500,
+  "fraction_shared": 0.0,
+  "concordance_computed": false,
+  "mean_genotype_concordance": null
+}

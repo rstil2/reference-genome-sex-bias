@@ -1,0 +1,105 @@
+{
+  "generated_utc": "2026-06-30T18:29:21Z",
+  "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+  "n_models": 5,
+  "model_results": {
+    "logistic_regression": {
+      "n_repeats": 20,
+      "delta_delta_mean": -0.005470613067519753,
+      "delta_delta_bootstrap_ci_95": [
+        -0.010177323782218044,
+        -0.0004940107295498418
+      ],
+      "paired_sign_permutation_p_value": 0.04559088182363527,
+      "direction_supports_hypothesis": false,
+      "observed_statistic": -0.005470613067519753,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_logistic_regression_metrics.csv",
+        "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_logistic_regression_metrics.csv"
+      },
+      "holm_adjusted_p_value": 0.18236352729454108,
+      "holm_significant_at_005": false
+    },
+    "random_forest": {
+      "n_repeats": 20,
+      "delta_delta_mean": 0.012861419998931095,
+      "delta_delta_bootstrap_ci_95": [
+        0.0034593514074633034,
+        0.02248527284772521
+      ],
+      "paired_sign_permutation_p_value": 0.020195960807838434,
+      "direction_supports_hypothesis": true,
+      "observed_statistic": 0.012861419998931095,
+      "effect_size_threshold_met": true,
+      "inputs": {
+        "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_random_forest_metrics.csv",
+        "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_random_forest_metrics.csv"
+      },
+      "holm_adjusted_p_value": 0.10097980403919217,
+      "holm_significant_at_005": false
+    },
+    "xgboost": {
+      "n_repeats": 20,
+      "delta_delta_mean": 0.00437936191063164,
+      "delta_delta_bootstrap_ci_95": [
+        -0.00289694760033451,
+        0.011939054345857923
+      ],
+      "paired_sign_permutation_p_value": 0.2731453709258148,
+      "direction_supports_hypothesis": true,
+      "observed_statistic": 0.00437936191063164,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_xgboost_metrics.csv",
+        "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_xgboost_metrics.csv"
+      },
+      "holm_adjusted_p_value": 0.8194361127774444,
+      "holm_significant_at_005": false
+    },
+    "svm": {
+      "n_repeats": 20,
+      "delta_delta_mean": -0.0016461282601735073,
+      "delta_delta_bootstrap_ci_95": [
+        -0.0068857142074599965,
+        0.0037891993179866813
+      ],
+      "paired_sign_permutation_p_value": 0.5696860627874425,
+      "direction_supports_hypothesis": false,
+      "observed_statistic": -0.0016461282601735073,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_svm_metrics.csv",
+        "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_svm_metrics.csv"
+      },
+      "holm_adjusted_p_value": 0.8194361127774444,
+      "holm_significant_at_005": false
+    },
+    "mlp": {
+      "n_repeats": 20,
+      "delta_delta_mean": 0.004419557356476767,
+      "delta_delta_bootstrap_ci_95": [
+        -0.003899686733956741,
+        0.012386010646352148
+      ],
+      "paired_sign_permutation_p_value": 0.3173365326934613,
+      "direction_supports_hypothesis": true,
+      "observed_statistic": 0.004419557356476767,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/grch38_mlp_metrics.csv",
+        "t2t_metrics": "Study_v2_Real_Data/Results/metrics/downstream_v2/panel_D_autosome_only/t2t_mlp_metrics.csv"
+      },
+      "holm_adjusted_p_value": 0.8194361127774444,
+      "holm_significant_at_005": false
+    }
+  },
+  "confirmatory_decision": {
+    "criterion_1_directional_consistency": true,
+    "criterion_2_any_ci_excludes_zero": true,
+    "criterion_3_holm_significant": false,
+    "criterion_4_effect_size_threshold": true,
+    "median_delta_delta_across_models": 0.00437936191063164,
+    "evidence_tier": "B_suggestive"
+  }
+}

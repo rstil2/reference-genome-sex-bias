@@ -65,7 +65,8 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-VENV_PY="/Users/stillwell/projects/Project 33 - Bias in Reference Genomes/.venv/bin/python"
+PROJECT_DIR="$(cd "${ROOT_DIR}/.." && pwd)"
+VENV_PY="${PROJECT_DIR}/.venv/bin/python"
 PY="${VENV_PY}"
 # Ensure the homebrew libomp (with required symbols) is found before the older /usr/local one
 export DYLD_LIBRARY_PATH="/opt/homebrew/lib:${DYLD_LIBRARY_PATH:-}"

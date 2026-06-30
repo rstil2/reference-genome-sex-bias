@@ -1,0 +1,14 @@
+{
+  "generated_utc": "2026-06-30T17:02:48Z",
+  "model": "logistic_regression",
+  "label_column": "sex",
+  "stratify_column": "sex",
+  "n_repeats": 20,
+  "n_samples": 3202,
+  "n_features": 6,
+  "overall_balanced_accuracy_mean": 1.0,
+  "overall_balanced_accuracy_std": 0.0,
+  "male_balanced_accuracy_mean": 1.0,
+  "female_balanced_accuracy_mean": 1.0,
+  "sex_gap_male_minus_female": 0.0
+}
