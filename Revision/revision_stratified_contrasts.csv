@@ -1,0 +1,13 @@
+analysis,group,n,estimate,ci_lo,ci_hi,p_value,note
+chrX_female_paired_het,AFR,435.0,-0.005543307950735945,-0.006254962728316914,-0.004787838257149503,2.281494632900522e-41,estimate is mean (T2T - GRCh38); bootstrap 95% CI; Wilcoxon signed-rank p
+chrX_female_paired_het,AMR,265.0,0.05120832509129281,0.04915484207843472,0.05331377547131745,3.242893160656093e-45,estimate is mean (T2T - GRCh38); bootstrap 95% CI; Wilcoxon signed-rank p
+chrX_female_paired_het,EAS,293.0,0.04381565915311443,0.04281286178520888,0.04482867492336333,8.4968369718789365e-50,estimate is mean (T2T - GRCh38); bootstrap 95% CI; Wilcoxon signed-rank p
+chrX_female_paired_het,EUR,328.0,0.07168235399262159,0.07051425501611583,0.07296934252914992,1.6027636930255546e-55,estimate is mean (T2T - GRCh38); bootstrap 95% CI; Wilcoxon signed-rank p
+chrX_female_paired_het,SAS,282.0,0.0537629894580037,0.05251703507789022,0.055006257462269496,5.357315199339612e-48,estimate is mean (T2T - GRCh38); bootstrap 95% CI; Wilcoxon signed-rank p
+chrX_female_het_kruskal,five_superpopulations,1603.0,1222.1683585929422,,,2.4907154085636812e-263,estimate is the Kruskal-Wallis H statistic on the paired differences
+chr22_paired_het,female,1603.0,0.03302601538379435,0.03124709719570742,0.03480228234302387,,estimate is mean (T2T - GRCh38); bootstrap 95% CI
+chr22_paired_het,male,1599.0,0.031800249394663214,0.029945464911652203,0.033568834586095955,,estimate is mean (T2T - GRCh38); bootstrap 95% CI
+chrX_mean_n_total,F_GRCh38,,130296.054897068,,,,mean n_called=130296.0549; mean n_missing=0.0000; mean call_rate=1.000000
+chrX_mean_n_total,F_T2T,,131786.96631316282,,,,mean n_called=121035.0412; mean n_missing=10751.9251; mean call_rate=0.917228
+chrX_mean_n_total,M_GRCh38,,2736597.79862414,,,,mean n_called=2736597.7986; mean n_missing=0.0000; mean call_rate=1.000000
+chrX_mean_n_total,M_T2T,,4447868.710444028,,,,mean n_called=4432150.5822; mean n_missing=15718.1282; mean call_rate=0.996466

@@ -1,0 +1,105 @@
+{
+  "generated_utc": "2026-10-07T18:08:29Z",
+  "estimand": "delta_delta = (male-female gap in GRCh38) - (male-female gap in T2T)",
+  "n_models": 5,
+  "model_results": {
+    "logistic_regression": {
+      "n_repeats": 20,
+      "delta_delta_mean": -0.0018156916594350482,
+      "delta_delta_bootstrap_ci_95": [
+        -0.006447655163231346,
+        0.002849825703702765
+      ],
+      "paired_sign_permutation_p_value": 0.4479104179164167,
+      "direction_supports_hypothesis": false,
+      "observed_statistic": -0.0018156916594350482,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_logistic_regression_metrics.csv",
+        "t2t_metrics": "Revision/revision_data/panelC_capped/t2t_capped_logistic_regression_metrics.csv"
+      },
+      "holm_adjusted_p_value": 1.0,
+      "holm_significant_at_005": false
+    },
+    "random_forest": {
+      "n_repeats": 20,
+      "delta_delta_mean": 0.006590839190446157,
+      "delta_delta_bootstrap_ci_95": [
+        -0.0013922745161131372,
+        0.015827579993060593
+      ],
+      "paired_sign_permutation_p_value": 0.17816436712657469,
+      "direction_supports_hypothesis": true,
+      "observed_statistic": 0.006590839190446157,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_random_forest_metrics.csv",
+        "t2t_metrics": "Revision/revision_data/panelC_capped/t2t_capped_random_forest_metrics.csv"
+      },
+      "holm_adjusted_p_value": 0.7126574685062987,
+      "holm_significant_at_005": false
+    },
+    "xgboost": {
+      "n_repeats": 20,
+      "delta_delta_mean": 0.0020482168816588152,
+      "delta_delta_bootstrap_ci_95": [
+        -0.005819948563100003,
+        0.010019485664959294
+      ],
+      "paired_sign_permutation_p_value": 0.6244751049790042,
+      "direction_supports_hypothesis": true,
+      "observed_statistic": 0.0020482168816588152,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_xgboost_metrics.csv",
+        "t2t_metrics": "Revision/revision_data/panelC_capped/t2t_capped_xgboost_metrics.csv"
+      },
+      "holm_adjusted_p_value": 1.0,
+      "holm_significant_at_005": false
+    },
+    "svm": {
+      "n_repeats": 20,
+      "delta_delta_mean": 0.004169527612003831,
+      "delta_delta_bootstrap_ci_95": [
+        -0.0007320919357561675,
+        0.009365157687315322
+      ],
+      "paired_sign_permutation_p_value": 0.13257348530293941,
+      "direction_supports_hypothesis": true,
+      "observed_statistic": 0.004169527612003831,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_svm_metrics.csv",
+        "t2t_metrics": "Revision/revision_data/panelC_capped/t2t_capped_svm_metrics.csv"
+      },
+      "holm_adjusted_p_value": 0.6628674265146971,
+      "holm_significant_at_005": false
+    },
+    "mlp": {
+      "n_repeats": 20,
+      "delta_delta_mean": -0.0006505934148046955,
+      "delta_delta_bootstrap_ci_95": [
+        -0.0068689368539768675,
+        0.0060715710893500426
+      ],
+      "paired_sign_permutation_p_value": 0.8540291941611677,
+      "direction_supports_hypothesis": false,
+      "observed_statistic": -0.0006505934148046955,
+      "effect_size_threshold_met": false,
+      "inputs": {
+        "grch38_metrics": "Results/metrics/downstream_v2/panel_C_genome_wide_snp/grch38_mlp_metrics.csv",
+        "t2t_metrics": "Revision/revision_data/panelC_capped/t2t_capped_mlp_metrics.csv"
+      },
+      "holm_adjusted_p_value": 1.0,
+      "holm_significant_at_005": false
+    }
+  },
+  "confirmatory_decision": {
+    "criterion_1_directional_consistency": true,
+    "criterion_2_any_ci_excludes_zero": false,
+    "criterion_3_holm_significant": false,
+    "criterion_4_effect_size_threshold": false,
+    "median_delta_delta_across_models": 0.0020482168816588152,
+    "evidence_tier": "C_exploratory"
+  }
+}

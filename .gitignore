@@ -10,3 +10,6 @@ Results/logs/
 
 # macOS
 .DS_Store
+
+# Revision working files
+Revision/revision_data/

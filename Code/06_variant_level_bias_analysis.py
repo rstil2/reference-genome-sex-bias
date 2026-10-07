@@ -139,10 +139,13 @@ def _canonical_col(raw: str) -> str:
     lc = raw.lower()
     if lc == "sample":
         return "sample_id"
-    if "nrefhom" in lc:
-        return "n_ref_hom"
+    # Test nNonRefHom first: "nrefhom" is a substring of "nnonrefhom", so the
+    # original order mapped both columns to n_ref_hom and dropped the true
+    # reference-homozygous count (n_hom_alt was then zero in every row).
     if "nnonrefhom" in lc:
         return "n_hom_alt"
+    if "nrefhom" in lc:
+        return "n_ref_hom"
     if lc in ("nhet", "nhets"):        # bcftools ≤1.19: nHet, ≥1.20: nHets
         return "n_het"
     if "nhapref" in lc:
