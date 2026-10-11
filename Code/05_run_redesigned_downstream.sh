@@ -5,10 +5,14 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
-PROJECT_DIR="$(cd "${ROOT_DIR}/.." && pwd)"
-VENV_PY="${PROJECT_DIR}/.venv/bin/python"
-PY="${VENV_PY}"
-export DYLD_LIBRARY_PATH="/opt/homebrew/lib:${DYLD_LIBRARY_PATH:-}"
+if [[ -x "${ROOT_DIR}/.venv/bin/python" ]]; then
+  PY="${ROOT_DIR}/.venv/bin/python"
+elif command -v python3 >/dev/null 2>&1; then
+  PY="$(command -v python3)"
+else
+  echo "python3 not found" >&2
+  exit 1
+fi
 
 TS="$(date -u +"%Y%m%dT%H%M%SZ")"
 LOG="${ROOT_DIR}/Results/logs/redesigned_downstream_${TS}.log"

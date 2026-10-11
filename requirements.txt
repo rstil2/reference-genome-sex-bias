@@ -1,0 +1,9 @@
+# Versions used for the original panel-battery run (Python 3.12.13).
+# The revision scripts in Revision/ were run under Python 3.13.1,
+# XGBoost 3.3.0, and SciPy 1.14.1. See README.md.
+numpy==2.4.3
+pandas==2.3.3
+scipy==1.16.0
+scikit-learn==1.8.0
+xgboost==3.0.3
+matplotlib==3.10.0

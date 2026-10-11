@@ -11,5 +11,9 @@ Results/logs/
 # macOS
 .DS_Store
 
-# Revision working files
+# Bytecode
+__pycache__/
+*.pyc
+
+# Revision working files (large intermediate matrices)
 Revision/revision_data/

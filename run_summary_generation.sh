@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+# Local helper from the original working copy. It uses an absolute path on
+# one machine and is not part of the reproducible pipeline. Use
+# Code/10_downstream_panel_battery.py or Code/05_run_redesigned_downstream.sh
+# as described in the repository README.
+
 # This script is designed to be a foolproof way to generate the summary results
 # for Project 33, using absolute paths to avoid any ambiguity about the
 # execution context.
